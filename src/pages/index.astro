@@ -45,7 +45,7 @@ import {
         <details class="fold">
         <summary class="section__label">
           <span class="section__label-text">Selected Publications &amp; Projects</span>
-          <span class="fold__arrow" aria-hidden="true">↓</span>
+          <span class="fold__cue" aria-hidden="true"><span class="fold__arrow">↓</span></span>
         </summary>
         <div class="writing reveal">
           {
@@ -75,7 +75,7 @@ import {
         <details class="fold">
         <summary class="section__label">
           <span class="section__label-text">Film</span>
-          <span class="fold__arrow" aria-hidden="true">↓</span>
+          <span class="fold__cue" aria-hidden="true"><span class="fold__arrow">↓</span></span>
         </summary>
         {
           films.map((f) => (
@@ -110,7 +110,7 @@ import {
         <details class="fold">
         <summary class="section__label">
           <span class="section__label-text">Experience</span>
-          <span class="fold__arrow" aria-hidden="true">↓</span>
+          <span class="fold__cue" aria-hidden="true"><span class="fold__arrow">↓</span></span>
         </summary>
         {
           experience.map((org) => (
@@ -142,18 +142,14 @@ import {
   <!-- Footer / contact -->
   <footer class="footer" id="contact">
     <div class="wrap">
-      {
-        profile.email ? (
-          <a class="footer__contact" href={`mailto:${profile.email}`}>
-            {profile.email} →
-          </a>
-        ) : (
-          <a class="footer__contact" href={profile.instagram} rel="noopener">
-            Connect on Instagram →
-          </a>
-        )
-      }
       <ul class="footer__links">
+        {profile.email && (
+          <li>
+            <a class="footer__contact" href={`mailto:${profile.email}`}>
+              {profile.email} →
+            </a>
+          </li>
+        )}
         <li>
           <a href={profile.instagram} target="_blank" rel="noopener">
             Instagram, {profile.instagramHandle} ↗

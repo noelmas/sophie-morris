@@ -154,8 +154,26 @@ main,
   color: var(--ink);
 }
 
-.fold__arrow {
+.fold__cue {
   flex: none;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4em;
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.fold__cue::before {
+  content: 'expand';
+}
+
+.fold[open] > .section__label .fold__cue::before {
+  content: 'collapse';
+}
+
+.fold__arrow {
+  display: inline-block;
   color: var(--ink);
   transition: transform 0.25s ease;
 }
@@ -322,7 +340,7 @@ main,
 }
 
 .org__name {
-  font-size: 1.05rem;
+  font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: -0.005em;
 }
@@ -392,7 +410,7 @@ main,
 }
 
 .film__title {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: -0.005em;
   line-height: 1.4;
@@ -586,9 +604,8 @@ main,
 
 .footer__contact {
   display: inline-block;
-  margin-top: 1.1rem;
   font-family: var(--mono);
-  font-size: 0.82rem;
+  font-size: 0.72rem;
   font-weight: 400;
   color: var(--ink);
   text-decoration: underline;
@@ -604,17 +621,21 @@ main,
 
 .footer__links {
   list-style: none;
-  margin: 1.5rem 0 0;
+  margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 1.4rem;
 }
 
 .footer__links li {
-  padding: 0.55rem 0;
+  padding: 0;
 }
 
 .footer__links a {
   font-family: var(--mono);
-  font-size: 0.82rem;
+  font-size: 0.72rem;
   letter-spacing: 0;
   text-transform: lowercase;
   color: var(--ink-soft);
@@ -633,7 +654,7 @@ main,
   gap: 1rem;
   margin-top: 2.25rem;
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.66rem;
   letter-spacing: 0;
   text-transform: lowercase;
   color: var(--muted);

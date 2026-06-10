@@ -82,13 +82,6 @@ export const publications: Publication[] = [
     role: 'Author',
   },
   {
-    year: '2024',
-    title: '“A Brief History of Powerful Gemstone Amulets”',
-    outlet: 'Victoria and Albert Museum · YouTube',
-    role: 'Presenter',
-    url: 'https://www.youtube.com/watch?v=kqa09KH4weQ',
-  },
-  {
     year: '2023',
     title: 'Eternal Medium: Seeing the World in Stone',
     outlet: 'Los Angeles County Museum of Art (LACMA)',

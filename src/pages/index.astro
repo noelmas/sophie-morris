@@ -4,7 +4,7 @@ import Cutouts from '../components/Cutouts.astro';
 import {
   profile,
   experience,
-  film,
+  films,
   publications,
   education,
   fellowships,
@@ -83,24 +83,29 @@ import {
     <section class="section" id="film">
       <div class="wrap">
         <p class="section__label">Film</p>
-        <div class="film reveal">
-          <div class="film__frame">
-            <iframe
-              src={`https://www.youtube-nocookie.com/embed/${film.youtubeId}`}
-              title={film.title}
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen></iframe>
-          </div>
-          <div class="film__caption">
-            <h2 class="film__title">{film.title}</h2>
-            <p class="film__note">{film.note}</p>
-            <a class="film__link" href={film.url} target="_blank" rel="noopener">
-              Watch on YouTube — {film.publisher} ↗
-            </a>
-          </div>
-        </div>
+        {
+          films.map((f) => (
+            <div class="film reveal">
+              <div class="film__frame">
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${f.youtubeId}`}
+                  title={f.title}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                />
+              </div>
+              <div class="film__caption">
+                <h2 class="film__title">{f.title}</h2>
+                <p class="film__note">{f.note}</p>
+                <a class="film__link" href={f.url} target="_blank" rel="noopener">
+                  Watch on YouTube — {f.publisher} ↗
+                </a>
+              </div>
+            </div>
+          ))
+        }
       </div>
     </section>
 

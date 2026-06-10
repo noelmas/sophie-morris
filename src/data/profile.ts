@@ -53,12 +53,6 @@ export const publications: Publication[] = [
   },
   {
     year: '2025',
-    title: '“Unboxing Real Shipwrecked Treasure and Archaeological Jewellery”',
-    outlet: 'Victoria and Albert Museum · YouTube',
-    role: 'Presenter',
-  },
-  {
-    year: '2025',
     title: 'Lives of the Great Makers: 500 Years of Creative Excellence',
     outlet: 'Thames & Hudson / V&A',
     role: 'Contributing author — chapters on “The Castellani” and “Charlotte de Syllas”',
@@ -171,13 +165,22 @@ export const experience: ExperienceGroup[] = [
   },
 ];
 
-export const film = {
-  title: 'A Brief History of Powerful Gemstone Amulets',
-  publisher: 'Victoria and Albert Museum',
-  youtubeId: 'kqa09KH4weQ',
-  url: 'https://www.youtube.com/watch?v=kqa09KH4weQ',
-  note: 'A short film for the V&A tracing the history of gemstones long believed to hold protective and talismanic power.',
-};
+export const films = [
+  {
+    title: 'A Brief History of Powerful Gemstone Amulets',
+    publisher: 'Victoria and Albert Museum',
+    youtubeId: 'kqa09KH4weQ',
+    url: 'https://www.youtube.com/watch?v=kqa09KH4weQ',
+    note: 'A short film for the V&A tracing the history of gemstones long believed to hold protective and talismanic power.',
+  },
+  {
+    title: 'Unboxing Real Shipwrecked Treasure & Archaeological Jewellery',
+    publisher: 'Victoria and Albert Museum',
+    youtubeId: 'EIIB-626XIw',
+    url: 'https://www.youtube.com/watch?v=EIIB-626XIw',
+    note: 'Sophie unboxes genuine shipwrecked treasure and ancient archaeological jewellery for the V&A.',
+  },
+];
 
 export const education = [
   {

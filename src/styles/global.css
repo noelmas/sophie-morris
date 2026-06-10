@@ -377,6 +377,10 @@ main,
   border: 0;
 }
 
+.film + .film {
+  margin-top: 2rem;
+}
+
 .film__caption {
   margin-top: 1.1rem;
 }

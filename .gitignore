@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+*.log
+
+# Python cutout tool — local only, do not commit
+tools/.venv/
+tools/models/
+__pycache__/

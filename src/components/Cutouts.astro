@@ -1,0 +1,27 @@
+---
+// Decorative cut-out layer. Renders nothing until cutouts[] has entries,
+// so there are no placeholder graphics cluttering the page in the meantime.
+import { cutouts } from '../data/cutouts';
+
+// Prefix the (root-absolute) src with Astro's BASE_URL so the paths resolve
+// correctly under a GitHub Pages sub-path as well as at root in dev.
+const base = import.meta.env.BASE_URL;
+const withBase = (src: string) =>
+  `${base.replace(/\/$/, '')}/${src.replace(/^\//, '')}`;
+---
+
+{
+  cutouts.length > 0 && (
+    <div class="cutout-layer" aria-hidden="true">
+      {cutouts.map((c) => (
+        <img
+          class={`cutout cutout--${c.side}`}
+          src={withBase(c.src)}
+          alt=""
+          loading="lazy"
+          style={`top:${c.top}; width:${c.width}; --rot:${c.rotate ?? '0deg'};`}
+        />
+      ))}
+    </div>
+  )
+}

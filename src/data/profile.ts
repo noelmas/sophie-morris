@@ -3,7 +3,7 @@
 
 export const profile = {
   name: 'Sophie Morris',
-  title: 'Curator & Historian of Art',
+  title: 'Freelance curator, writer & researcher',
   tagline:
     'Curator and historian of visual and material culture, with specialist interests in decorative art and jewellery.',
   location: 'London, United Kingdom',

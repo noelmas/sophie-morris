@@ -72,28 +72,34 @@ h3 {
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  display: none;
+  display: block;
 }
 
 .cutout {
   position: absolute;
   height: auto;
-  transform: rotate(var(--rot, 0deg));
-  filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.22));
   user-select: none;
+  /* Narrow / mobile: objects fall into the centre and recede into the
+     background as faint watermarks behind the text. */
+  left: 50%;
+  transform: translateX(-50%) rotate(var(--rot, 0deg));
+  opacity: 0.1;
+  filter: none;
 }
 
-.cutout--left {
-  left: clamp(0.5rem, 2.5vw, 2.5rem);
-}
-
-.cutout--right {
-  right: clamp(0.5rem, 2.5vw, 2.5rem);
-}
-
+/* Wide screens: objects sit full-strength in the side gutters. */
 @media (min-width: 1300px) {
-  .cutout-layer {
-    display: block;
+  .cutout {
+    left: auto;
+    transform: rotate(var(--rot, 0deg));
+    opacity: 1;
+    filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.22));
+  }
+  .cutout--left {
+    left: clamp(0.5rem, 2.5vw, 2.5rem);
+  }
+  .cutout--right {
+    right: clamp(0.5rem, 2.5vw, 2.5rem);
   }
 }
 

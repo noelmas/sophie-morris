@@ -10,8 +10,9 @@ export const profile = {
   email: 'sophieelisabethmorris@gmail.com',
   instagram: 'https://www.instagram.com/powersofthehoard/',
   instagramHandle: '@powersofthehoard',
+  linkedin: 'https://www.linkedin.com/in/sophie-morris-910733127/',
   intro: [
-    'Dr Sophie Morris is a curator and historian of visual and material culture, with specialist interests in decorative art and jewellery. As Curator of the Rosalinde & Arthur Gilbert Collection at the V&A, she led a four-year redevelopment of seven permanent galleries — awarded five stars by The Guardian — alongside international exhibitions, loans, and public programming. She holds an AHRC-funded PhD from UCL and is co-editor of Elemental Forces in Early Modern Culture (forthcoming, Brill).',
+    'Dr Sophie Morris is a curator and historian of visual and material culture, with specialist interests in decorative art and jewellery. As Curator of the Rosalinde & Arthur Gilbert Collection at the V&A, she led a four-year redevelopment of seven permanent galleries, awarded five stars by The Guardian, alongside international exhibitions, loans, and public programming. She holds an AHRC-funded PhD from UCL and is co-editor of Elemental Forces in Early Modern Culture (forthcoming, Brill).',
   ],
 };
 
@@ -42,7 +43,7 @@ export const publications: Publication[] = [
     year: '2027',
     title:
       'Elemental Forces in Early Modern Culture: Properties, Combinations, and Transformations',
-    outlet: 'Eds. Zorach, Swan, Allington-Wood & Morris · Brill (forthcoming)',
+    outlet: 'Eds. Zorach, Swan, Allington-Wood & Morris, Brill (forthcoming)',
     role: 'Co-editor & contributing author',
   },
   {
@@ -55,7 +56,7 @@ export const publications: Publication[] = [
     year: '2025',
     title: 'Lives of the Great Makers: 500 Years of Creative Excellence',
     outlet: 'Thames & Hudson / V&A',
-    role: 'Contributing author — chapters on “The Castellani” and “Charlotte de Syllas”',
+    role: 'Contributing author, chapters on “The Castellani” and “Charlotte de Syllas”',
   },
   {
     year: '2025',
@@ -67,12 +68,12 @@ export const publications: Publication[] = [
     year: '2024',
     title: 'Le Goût de la Renaissance: Un dialogue entre collections',
     outlet: 'Centre des monuments nationaux, Paris',
-    role: 'Contributing author — “Succession: Crafting and Collecting Ancestral Hardstones in Renaissance Europe”',
+    role: 'Contributing author, “Succession: Crafting and Collecting Ancestral Hardstones in Renaissance Europe”',
   },
   {
     year: '2024',
     title: '“An A to Z of Gemstones”',
-    outlet: 'Victoria and Albert Museum · Web article',
+    outlet: 'Victoria and Albert Museum, web article',
     role: 'Author',
   },
   {
@@ -117,11 +118,11 @@ export const experience: ExperienceGroup[] = [
     roles: [
       {
         title:
-          'Curator, Arthur & Rosalinde Gilbert Collection (Decorative Art & Sculpture)',
+          'Curator, Rosalinde & Arthur Gilbert Collection (Decorative Art & Sculpture)',
         period: '2023 – 2026',
       },
       {
-        title: 'Assistant Curator, Arthur & Rosalinde Gilbert Collection',
+        title: 'Assistant Curator, Rosalinde & Arthur Gilbert Collection',
         period: '2022 – 2023',
       },
       {
@@ -137,7 +138,7 @@ export const experience: ExperienceGroup[] = [
       {
         title: 'Postdoctoral Research Assistant',
         period: '2019',
-        detail: '“Digital Heritage in Cultural Conflicts” Consortium.',
+        detail: '“Digital Heritage in Cultural Conflicts” Consortium',
       },
     ],
   },
@@ -158,8 +159,7 @@ export const experience: ExperienceGroup[] = [
       {
         title: 'Galleries, auction houses & collections',
         period: '2010 – 2015',
-        detail:
-          'Freelance Researcher, Christie’s; Collections Assistant, The Barber Institute of Fine Arts; Intern, Sculpture Department, V&A; Research & Provenance Intern, Impressionist & Modern Art, Sotheby’s London.',
+        detail: 'Christie’s, The Barber Institute of Fine Arts & Sotheby’s',
       },
     ],
   },

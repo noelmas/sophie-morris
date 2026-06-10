@@ -64,6 +64,37 @@ const { title, description = '' } = Astro.props;
         onScroll();
         window.addEventListener('scroll', onScroll, { passive: true });
       }
+
+      // Collapsible sections: reveal content the moment a fold opens, and
+      // auto-open a section when it's targeted from the top-nav links.
+      const folds = document.querySelectorAll('.fold');
+      folds.forEach((fold) => {
+        fold.addEventListener('toggle', () => {
+          if (fold.open) {
+            fold
+              .querySelectorAll('.reveal')
+              .forEach((el) => el.classList.add('is-visible'));
+          }
+        });
+      });
+
+      const openSection = (id) => {
+        if (!id) return;
+        const section = document.getElementById(id);
+        const fold = section && section.querySelector('.fold');
+        if (fold && !fold.open) fold.open = true;
+      };
+      openSection(location.hash.slice(1));
+      window.addEventListener('hashchange', () =>
+        openSection(location.hash.slice(1))
+      );
+
+      // Top-nav clicks expand the target section (even when re-clicked).
+      document.querySelectorAll('.nav a[href^="#"]').forEach((link) => {
+        link.addEventListener('click', () => {
+          openSection(link.getAttribute('href').slice(1));
+        });
+      });
     </script>
   </body>
 </html>

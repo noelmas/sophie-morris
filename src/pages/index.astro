@@ -6,23 +6,19 @@ import {
   experience,
   films,
   publications,
-  education,
-  fellowships,
 } from '../data/profile';
 ---
 
-<Layout title={`${profile.name} — ${profile.title}`} description={profile.tagline}>
+<Layout title={`${profile.name} · ${profile.title}`} description={profile.tagline}>
   <Cutouts />
 
   <header class="topbar">
     <div class="wrap topbar__inner">
       <a class="topbar__name" href="#top">{profile.name}</a>
       <nav class="nav">
-        <a href="#about">About</a>
         <a href="#publications">Publications</a>
         <a href="#film">Film</a>
         <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -35,7 +31,6 @@ import {
         <p class="hero__eyebrow">{profile.title}</p>
         <h1 class="hero__tagline">{profile.tagline}</h1>
         <div class="hero__meta">
-          <span>{profile.location}</span>
           <span>PhD, History of Art, UCL</span>
           <a class="hero__handle" href={profile.instagram} target="_blank" rel="noopener">
             {profile.instagramHandle} ↗
@@ -44,20 +39,14 @@ import {
       </div>
     </section>
 
-    <!-- About -->
-    <section class="section" id="about">
-      <div class="wrap">
-        <p class="section__label">About</p>
-        <div class="prose reveal">
-          {profile.intro.map((para) => <p>{para}</p>)}
-        </div>
-      </div>
-    </section>
-
     <!-- Publications & Projects -->
     <section class="section" id="publications">
       <div class="wrap">
-        <p class="section__label">Selected Publications &amp; Projects</p>
+        <details class="fold">
+        <summary class="section__label">
+          <span class="section__label-text">Selected Publications &amp; Projects</span>
+          <span class="fold__arrow" aria-hidden="true">↓</span>
+        </summary>
         <div class="writing reveal">
           {
             publications.map((p) => (
@@ -76,13 +65,18 @@ import {
             ))
           }
         </div>
+        </details>
       </div>
     </section>
 
     <!-- Film -->
     <section class="section" id="film">
       <div class="wrap">
-        <p class="section__label">Film</p>
+        <details class="fold">
+        <summary class="section__label">
+          <span class="section__label-text">Film</span>
+          <span class="fold__arrow" aria-hidden="true">↓</span>
+        </summary>
         {
           films.map((f) => (
             <div class="film reveal">
@@ -100,19 +94,24 @@ import {
                 <h2 class="film__title">{f.title}</h2>
                 <p class="film__note">{f.note}</p>
                 <a class="film__link" href={f.url} target="_blank" rel="noopener">
-                  Watch on YouTube — {f.publisher} ↗
+                  Watch on YouTube · {f.publisher} ↗
                 </a>
               </div>
             </div>
           ))
         }
+        </details>
       </div>
     </section>
 
     <!-- Experience -->
     <section class="section" id="experience">
       <div class="wrap">
-        <p class="section__label">Experience</p>
+        <details class="fold">
+        <summary class="section__label">
+          <span class="section__label-text">Experience</span>
+          <span class="fold__arrow" aria-hidden="true">↓</span>
+        </summary>
         {
           experience.map((org) => (
             <div class="org reveal">
@@ -125,10 +124,9 @@ import {
               <ul class="roles">
                 {org.roles.map((role) => (
                   <li class="role">
-                    <span class="role__period">{role.period}</span>
                     <p class="role__entry">
                       <span class="role__title">{role.title}</span>
-                      {role.detail && <span class="role__detail"> — {role.detail}</span>}
+                      {role.detail && <span class="role__detail">: {role.detail}</span>}
                     </p>
                   </li>
                 ))}
@@ -136,39 +134,7 @@ import {
             </div>
           ))
         }
-      </div>
-    </section>
-
-    <!-- Education + Fellowships -->
-    <section class="section" id="education">
-      <div class="wrap cols">
-        <div class="reveal">
-          <p class="section__label">Education</p>
-          {
-            education.map((e) => (
-              <div class="edu">
-                <span class="edu__period">{e.period}</span>
-                <p class="edu__entry">
-                  <span class="edu__qual">{e.qualification}</span>, {e.institution}
-                  {e.detail && <span class="edu__note"> · {e.detail}</span>}
-                </p>
-              </div>
-            ))
-          }
-        </div>
-        <div class="reveal">
-          <p class="section__label">Fellowships &amp; Grants</p>
-          <ul class="grants">
-            {
-              fellowships.map((f) => (
-                <li class="grant">
-                  <span class="grant__period">{f.period}</span>
-                  <span class="grant__text">{f.text}</span>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
+        </details>
       </div>
     </section>
   </main>
@@ -191,6 +157,11 @@ import {
         <li>
           <a href={profile.instagram} target="_blank" rel="noopener">
             Instagram, {profile.instagramHandle} ↗
+          </a>
+        </li>
+        <li>
+          <a href={profile.linkedin} target="_blank" rel="noopener">
+            LinkedIn ↗
           </a>
         </li>
       </ul>

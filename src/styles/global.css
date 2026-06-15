@@ -13,7 +13,9 @@
   --line: #e1ddd3; /* hairline dividers only (not text) */
 
   --sans: 'Inter', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
-  --mono: 'Space Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  /* Unified typeface — labels/meta use the same family as the headings
+     (per request: "make all the font the same as title headings"). */
+  --mono: var(--sans);
 
   --measure: 56rem;
   --gutter: clamp(1.5rem, 6vw, 4rem);
@@ -87,8 +89,13 @@ h3 {
   filter: none;
 }
 
-/* Wide screens: objects sit full-strength in the side gutters. */
+/* Wide screens: objects sit full-strength in the side gutters, and the
+   whole layer is pinned to the viewport so the objects stay evenly spread
+   down the gutters no matter how tall the page is (top is % of viewport). */
 @media (min-width: 1300px) {
+  .cutout-layer {
+    position: fixed;
+  }
   .cutout {
     left: auto;
     transform: rotate(var(--rot, 0deg));
@@ -96,10 +103,10 @@ h3 {
     filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.22));
   }
   .cutout--left {
-    left: clamp(0.5rem, 2.5vw, 2.5rem);
+    left: clamp(1rem, 2.5vw, 3rem);
   }
   .cutout--right {
-    right: clamp(0.5rem, 2.5vw, 2.5rem);
+    right: clamp(1rem, 2.5vw, 3rem);
   }
 }
 

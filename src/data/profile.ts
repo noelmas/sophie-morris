@@ -3,7 +3,7 @@
 
 export const profile = {
   name: 'Sophie Morris',
-  title: 'Freelance curator, writer & researcher',
+  title: 'Curator, writer & researcher',
   tagline:
     'Curator and historian of visual and material culture, with specialist interests in decorative art and jewellery.',
   location: 'London, United Kingdom',
@@ -126,7 +126,7 @@ export const experience: ExperienceGroup[] = [
         period: '2022 – 2023',
       },
       {
-        title: 'Researcher to the Director & Deputy Director',
+        title: 'Researcher to the Director, Deputy Director & Director, V&A East',
         period: '2020 – 2022',
       },
     ],
